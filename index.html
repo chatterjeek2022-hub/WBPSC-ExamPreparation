@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBPSC Ultimate Ecosystem</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="wbpscprep.png">
+<link rel="apple-touch-icon" href="wbpscprep.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="hero">
+<h1>📘 WBPSC Ultimate Ecosystem</h1>
+<p>Offline Bengali Preparation System</p>
+</header>
+
+<section class="dashboard">
+<div class="dash">Subjects: 8</div>
+<div class="dash">Questions: 500+</div>
+<div class="dash">Offline Mode</div>
+<div class="dash">PDF Enabled</div>
+</section>
+
+<section class="card">
+
+<h2>📚 Study Materials</h2>
+
+<select id="subjectSelect" onchange="loadSubject()">
+<option value="history">ইতিহাস</option>
+<option value="geography">ভূগোল</option>
+<option value="constitution">সংবিধান</option>
+<option value="economics">অর্থনীতি</option>
+<option value="science">বিজ্ঞান</option>
+<option value="math">অঙ্ক</option>
+</select>
+
+<textarea id="studyContent"></textarea>
+
+<div class="btns">
+<button onclick="downloadStudyPDF()">Download PDF</button>
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>📝 Mock Test</h2>
+
+<div id="timer">Time Left: 60:00</div>
+
+<div id="quizBox"></div>
+
+<div class="btns">
+<button onclick="submitQuiz()">Submit Test</button>
+<button onclick="downloadSolutionPDF()">Download Solution PDF</button>
+</div>
+
+<div id="result"></div>
+
+</section>
+
+</div>
+
+<script src="subjects.js"></script>
+<script src="quiz.js"></script>
+<script src="pdf.js"></script>
+
+<script>
+loadSubject();
+loadQuiz();
+startTimer();
+</script>
+
+</body>
+</html>
